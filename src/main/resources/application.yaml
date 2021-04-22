@@ -1,0 +1,12 @@
+server:
+  port: 2000
+logging:
+  file:
+    name: /cloud/app/logs/server-monitor.log
+  level:
+    root: info
+
+# 监控的文件系统主目录
+module:
+  monitor:
+    main: /data
