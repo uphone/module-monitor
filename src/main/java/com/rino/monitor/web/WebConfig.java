@@ -9,13 +9,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Slf4j
 public class WebConfig implements WebMvcConfigurer {
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowCredentials(true)
-//                .allowedHeaders("GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("*") // 注意： 这里需要设置为*，在Session拦截器中需要设置为特定的headers
-                .allowedOriginPatterns("*")
-                .allowedMethods("*");
-    }
+  @Override
+  public void addCorsMappings(CorsRegistry registry) {
+    registry
+        .addMapping("/**")
+        .allowCredentials(true)
+        //                .allowedHeaders("GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS")
+        .allowedHeaders("*") // 注意： 这里需要设置为*，在Session拦截器中需要设置为特定的headers
+        .allowedOrigins("*")
+        .allowedMethods("*");
+  }
 }
